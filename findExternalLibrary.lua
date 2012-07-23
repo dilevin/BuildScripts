@@ -16,9 +16,8 @@ function findExternalLibrary(libName, extpath)
 			if loadedLibs[libName] then
 				print(libName.." already loaded.")
 			else
-				defines{string.upper(libName)}
-				loadedLibs[libName] = true
-				include (extpath.."/"..libName)
+				loadedLibs[libName] = (extpath.."/"..libName)
+				include (loadedLibs[libName])
 			end
 			
 		end
